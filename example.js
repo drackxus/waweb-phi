@@ -1,10 +1,10 @@
-// const wa = require('waweb-phi')
+// const was = require('waweb-phi')
 const wa = require('./index')
 
 
 const client = new wa({
     puppeteer: { headless: false },//change it to true if u want hidding the chrome/headles mode
-    authTimeout: 30000,
+    // authTimeout: 150000,
     // u can passing wa session here, and example, just uncoment and change to ur session
     // u can see ur session when u get AUTHENTICATED
     // 
@@ -41,18 +41,10 @@ client.on('auth_failure', msg => {
     console.error('AUTHENTICATION FAILURE', msg);
 
 
-})
+});
 
 client.on('ready', () => {
     console.log('READY');
-
-
-
-
-    
-        
-    
-     
 
         // send message, u can send to anyone, even if number not saved in ur contact
         client.sendMessage("6289506096398@c.us", `test`).then((r) => {
@@ -120,7 +112,7 @@ client.on('message', async msg => {
 client.on('disconnected', () => {
 
     console.log('Client was logged out');
-})
+});
 
 
 
